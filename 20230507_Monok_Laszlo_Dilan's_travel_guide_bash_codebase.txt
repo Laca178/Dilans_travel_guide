@@ -1,0 +1,16 @@
+# Downloading the dataset
+wget -P /home/laca/dilan/ 46.101.230.157/testtask/dilans_data.csv
+
+# Data separation by event_type
+grep "read" /home/laca/dilan/dilans_data.csv | sed 's/ /;/' > /home/laca/dilan/readers.csv
+grep "buy" /home/laca/dilan/dilans_data.csv | sed 's/ /;/' > /home/laca/dilan/purchases.csv
+grep "subscribe" /home/laca/dilan/dilans_data.csv | sed 's/ /;/' > /home/laca/dilan/subscribers.csv
+
+# Formatting the 'readers' table
+awk -i inplace -F ';' 'BEGIN {OFS = FS} NF == 6 {$6 = ";" $6} 1' /home/laca/dilan/readers.csv
+
+# Later, during an exploratory analysis in SQL I realized that the separation of the 'readers' table to 'new_readers' and 'returning_readers' would be beneficial. 
+
+# Separation of readers table into new and returning readers
+grep "read" /home/laca/dilan/dilans_data.csv | grep -E 'Reddit|AdWords|SEO' | sed 's/ /;/' > /home/laca/dilan/new_readers.csv
+grep "read" /home/laca/dilan/dilans_data.csv | grep -vE 'Reddit|AdWords|SEO' | sed 's/ /;/' > /home/laca/dilan/returning_readers.csv
