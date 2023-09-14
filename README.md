@@ -9,10 +9,10 @@ Dilan is a world traveler and he writes a travel blog where he sells an e-book a
 
 On his blog he has thousands of readers every day, coming from three sources: Reddit, SEO and AdWords. And his blog is only available in 8 different countries. 
 
-Dilan spends ~$1000 a month on marketing:
-    for Adwords advertisement (~$500 a month for paid ads),
-    for SEO (~$250 a month for editing) and
-    for Reddit (~$250 for content creation)
+Dilan spends $1000 a month on marketing:
+    for Adwords advertisement ($500 a month for paid ads),
+    for SEO ($250 a month for editing) and
+    for Reddit ($250 for content creation)
 
 The dataset was a large raw log file covering 3 months of user activity, including article reads, subscriptions and purchase events. 
 
